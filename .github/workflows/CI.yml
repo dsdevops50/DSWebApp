@@ -20,12 +20,11 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Restore  packages
-      run: |
-        nuget restore .\DSWebApp.sln
+      run: nuget restore .\DSWebApp.sln
       
     - name: Code Build and Publish
       run: |
         msbuild .\DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None
     
-        
+    
 

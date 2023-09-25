@@ -1,0 +1,32 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: DSWebApp
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "Dev" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+          
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+      
+    - name: Restore  packages
+      run: |
+        nuget restore .\DSWebApp.sln
+      
+    - name: Code Build and Publish
+      run: |
+        msbuild .\DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None
+    
+        
+

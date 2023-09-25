@@ -4,7 +4,6 @@
 # documentation.
 
 name: DSWebApp
-
 on:
   workflow_dispatch:
   push:

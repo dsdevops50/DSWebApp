@@ -7,7 +7,7 @@ name: DSWebApp
 on:
   workflow_dispatch:
   push:
-    branches: [ "Dev" ]
+    branches: [ "main" ]
 
 jobs:
   build:

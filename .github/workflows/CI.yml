@@ -26,5 +26,8 @@ jobs:
       run: |
         msbuild .\DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None
     
-    
+    - uses: actions/upload-artifact@v3
+      with:
+        name: DSWebApp_Build
+        path: .\bin\Release\netcoreapp3.1\Publish
 

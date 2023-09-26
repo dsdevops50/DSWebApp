@@ -31,3 +31,8 @@ jobs:
         name: DSWebApp_Build
         path: .\bin\Release\netcoreapp3.1\Publish
 
+    - uses: actions/upload-artifact@v3
+      with:
+        name: DSWebApp_Build2
+        path: .\bin\Release\netcoreapp3.1\Publish
+

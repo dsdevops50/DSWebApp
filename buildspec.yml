@@ -8,10 +8,10 @@ phases:
   build:
     commands:
       - nuget restore DSWebApp.sln
-      - msbuild DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None /p:OutDir=C:\codebuild\artifacts\
+      - msbuild DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None
       
 artifacts:
   files:
     - '**/*'
-  base-directory: 'C:\codebuild\artifacts\'
+  base-directory: '.\bin\Release\netcoreapp3.1\Publish'
 

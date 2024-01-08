@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    PROJECT: AspNetMvcSampleApp
+    PROJECT: DSWebApp
     DOTNET_FRAMEWORK: 4.6.1
 phases:
   build:

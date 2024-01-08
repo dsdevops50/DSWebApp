@@ -13,3 +13,4 @@ artifacts:
   files:
     - '**/*'
   base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\${env:PROJECT}_Package\Archive\'
+

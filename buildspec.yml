@@ -7,8 +7,8 @@ env:
 phases:
   build:
     commands:
-      - nuget restore
-      - msbuild $env:PROJECT.sln /p:TargetFrameworkVersion=v$env:DOTNET_FRAMEWORK /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=C:\codebuild\artifacts\ /t:Package
+      - msbuild DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None /p:OutDir=C:\codebuild\artifacts\
+      
 artifacts:
   files:
     - '**/*'

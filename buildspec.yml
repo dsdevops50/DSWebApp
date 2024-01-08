@@ -7,6 +7,7 @@ env:
 phases:
   build:
     commands:
+      - nuget restore DSWebApp.sln
       - msbuild DSWebApp.sln /p:Configuration=release /P:deployonbuild=true /p:Platform="any cpu" /p:DebugType=None /p:OutDir=C:\codebuild\artifacts\
       
 artifacts:
